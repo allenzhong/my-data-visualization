@@ -10,8 +10,8 @@
 			//here is special array, all data should be in second dimension 
 			//so that colors could take effect
 			//otherwise only first color apply to all data 
-      var wins1 = [[[0,28]], [[1,28]], [[2,15]], [[3,15]], [[4,8]]];
-      var years1 = [
+      var wins = [[[0,28]], [[1,28]], [[2,15]], [[3,15]], [[4,8]]];
+      var years = [
         [0, "2006"],
         [1, "2007"],
         [2, "2008"],
@@ -22,7 +22,7 @@
 			window.onload = function() {
 				Flotr.draw(
 					document.getElementById('chart'),
-					wins1,
+					wins,
 					{
             title: "Manchester City Wins",
             colors: ['#bb5643', '#33c2ff', '#089938', '#dc9b3e', '#ffff9f', '#4d8ea6'],
@@ -38,7 +38,7 @@
 							tickDecimals: 0
 						},
             xaxis: {
-              ticks: years1
+              ticks: years
             },
             grid: {
               horizontalLines: false,
