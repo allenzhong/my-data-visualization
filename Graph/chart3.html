@@ -1,0 +1,48 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+	</head>
+
+	<body>
+		<div id="chart" style="width: 600px; height: 300px;"></div>
+		<script src="../lib/flotr2/flotr2.js"></script>
+		<script>
+      var wins1 = [[[0,28]], [[1,28]], [[2,15]], [[3,15]], [[4,8]]];
+      var years1 = [
+        [0, "2006"],
+        [1, "2007"],
+        [2, "2008"],
+        [3, "2009"],
+        [4, "2010"]
+      ];
+
+			window.onload = function() {
+				Flotr.draw(
+					document.getElementById('chart'),
+					wins1,
+					{
+            title: "Manchester City Wins",
+            colors: ['#bb5643', '#33c2ff', '#089938', '#dc9b3e', '#ffff9f', '#4d8ea6'],
+						bars:{
+							show: true,
+              barWidth: 0.5,
+              shadowSize: 0,
+              fillOpacity: 1,
+              lineWidth: 0
+						},
+						yaxis: {
+							min: 0,
+							tickDecimals: 0
+						},
+            xaxis: {
+              ticks: years1
+            },
+            grid: {
+              horizontalLines: false,
+              verticalLines: false
+            }
+				});
+			}
+		</script>
+	</body>
+</html>
