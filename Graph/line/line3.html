@@ -1,0 +1,49 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+	</head>
+
+	<body>
+		<div id="chart" style="width: 600px; height: 300px;"></div>
+		<script src="../../lib/flotr2/flotr2.js"></script>
+		<script>
+      var co2 = [
+        [1959, 315.97],
+        [1960, 316.91],
+        [1961, 317.64],
+        [1962, 318.45]
+      ];
+      var temp = [
+        [ 1959,  0.0776 ],
+        [ 1960,  0.0280 ],
+        [ 1961,  0.1028 ],
+        [ 1962,  0.1289 ],
+      ];
+
+			window.onload = function() {
+				Flotr.draw(
+					document.getElementById('chart'),
+					[{
+            data: co2,
+            lines: {
+              show: true
+            }
+          },
+          {
+            data: temp,
+            lines: {
+              show: true
+            },
+            //this is for second y-axis
+            yaxis: 2
+          }],
+          {
+            grid: {horizontalLines: false, verticalLines: false},
+            yaxis: {min: 300, max: 400},
+            y2axis: {min: -0.15, max: 0.69}
+          }
+				);
+			}
+		</script>
+	</body>
+</html>
